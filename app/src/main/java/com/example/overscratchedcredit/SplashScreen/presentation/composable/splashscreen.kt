@@ -10,10 +10,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.Alignment
 import androidx.compose.foundation.layout.width
-import com.example.overscratchedcredit.ui.theme.PrimaryGreen
+import com.example.overscratchedcredit.commonUi.theme.PrimaryGreen
 import androidx.compose.ui.graphics.Color
 import androidx.compose.foundation.background
-import com.example.overscratchedcredit.ui.theme.Secondary
+import com.example.overscratchedcredit.commonUi.theme.Secondary
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -25,13 +25,12 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.overscratchedcredit.ui.theme.Neutral
+import com.example.overscratchedcredit.commonUi.theme.Neutral
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Circle
 //import androidx.compose.material.icons.filled.Circle
 import androidx.compose.material3.Icon
 import androidx.compose.ui.tooling.preview.Preview
-import com.google.android.gms.maps.model.Circle
 
 @Composable
 fun SplashScreen() {

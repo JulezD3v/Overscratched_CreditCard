@@ -1,4 +1,4 @@
-package com.example.overscratchedcredit.ui.theme
+package com.example.overscratchedcredit.commonUi.theme
 
 import androidx.compose.ui.graphics.Color
 

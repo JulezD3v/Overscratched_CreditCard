@@ -1,6 +1,5 @@
-package com.example.overscratchedcredit.ui.theme
+package com.example.overscratchedcredit.commonUi.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme

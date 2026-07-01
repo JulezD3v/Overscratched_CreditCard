@@ -38,6 +38,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.compose.runtime)
     implementation(libs.androidx.material.icons.extended)
     //implementation(libs.androidx.material.icons.core)
     implementation(platform(libs.androidx.compose.bom))
@@ -52,6 +53,8 @@ dependencies {
     implementation("androidx.compose.material3:material3:1.2.0")
     // For navigation/splash screen handling
     implementation("androidx.core:core-splashscreen:1.0.1")
+    implementation(libs.androidx.navigation3.runtime)
+    implementation(libs.androidx.navigation3.ui)
     implementation(libs.play.services.maps)
     testImplementation(libs.junit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
