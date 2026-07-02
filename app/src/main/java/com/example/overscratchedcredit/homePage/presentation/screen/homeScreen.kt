@@ -1,4 +1,4 @@
-package com.example.overscratchedcredit.HomePage.presentation.screen
+package com.example.overscratchedcredit.homePage.presentation.screen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border

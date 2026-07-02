@@ -28,7 +28,6 @@ import androidx.compose.ui.unit.sp
 import com.example.overscratchedcredit.commonUi.theme.Neutral
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Circle
-//import androidx.compose.material.icons.filled.Circle
 import androidx.compose.material3.Icon
 import androidx.compose.ui.tooling.preview.Preview
 

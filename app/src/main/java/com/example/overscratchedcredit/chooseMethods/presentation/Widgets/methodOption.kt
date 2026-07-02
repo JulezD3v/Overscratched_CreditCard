@@ -1,4 +1,4 @@
-package com.example.overscratchedcredit.ChooseMethods.Presentation.Widgets
+package com.example.overscratchedcredit.chooseMethods.presentation.Widgets
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Column

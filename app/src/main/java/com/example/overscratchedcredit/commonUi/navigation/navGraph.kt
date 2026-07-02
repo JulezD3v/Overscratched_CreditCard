@@ -7,8 +7,8 @@ import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
 import com.example.overscratchedcredit.camera.presentation.screens.ScannerScreen
-import com.example.overscratchedcredit.ChooseMethods.Presentation.Screen.ChooseMethodScreen
-import com.example.overscratchedcredit.HomePage.presentation.screen.HomeScreen
+import com.example.overscratchedcredit.chooseMethods.presentation.screen.ChooseMethodScreen
+import com.example.overscratchedcredit.homePage.presentation.screen.HomeScreen
 import com.example.overscratchedcredit.results.presentation.screens.ResultScreen
 import com.example.overscratchedcredit.splashscreen.presentation.composable.SplashScreen
 import kotlinx.coroutines.delay
@@ -74,7 +74,8 @@ fun AppNavGraph() {
             entry<PinResult> { result ->
                 ResultScreen(
                     pin = result.pin,
-                    onBackClick = { backStack.removeLastOrNull() }
+                    onBackClick = { backStack.clear()
+                                    backStack.add(Home) }
                 )
             }
 

@@ -1,4 +1,4 @@
-package com.example.overscratchedcredit.ChooseMethods.Presentation.Screen
+package com.example.overscratchedcredit.chooseMethods.presentation.screen
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -26,7 +26,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 //import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.overscratchedcredit.ChooseMethods.Presentation.Widgets.MethodOptionItem
+import com.example.overscratchedcredit.chooseMethods.presentation.Widgets.MethodOptionItem
 
 @Composable
 fun ChooseMethodScreen(

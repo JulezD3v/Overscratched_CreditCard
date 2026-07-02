@@ -126,7 +126,7 @@ fun ScannerScreen(
             Text("Place PIN area inside the frame", color = Color.Gray, fontSize = 14.sp)
         }
 
-        // ── Camera area ──────────────────────────────────────
+        // ── Camera area ────────────────────────────────────
         // weight(1f) makes this Box take all remaining vertical space
         // between the subtitle bar and the controls below
         Box(
