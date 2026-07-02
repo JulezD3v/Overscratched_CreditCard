@@ -1,4 +1,4 @@
-package com.example.overscratchedcredit.HomePage.presentation.Screen
+package com.example.overscratchedcredit.HomePage.presentation.screen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -27,6 +27,7 @@ import com.example.overscratchedcredit.commonUi.widgets.SecondaryButton
 
 @Composable
 fun HomeScreen(
+    modifier: Modifier = Modifier,
     onRecoverClick: () -> Unit,
     onHowItWorksClick: () -> Unit
 ) {

@@ -36,7 +36,7 @@ fun MethodOptionItem(
     Surface(
         onClick = onClick,
         modifier = modifier.fillMaxWidth(),
-        border = BorderStroke(width = 2.dp,color = Color.Black),
+        border = BorderStroke(width = 2.dp,color = Color.Gray),
         shape = RoundedCornerShape(12.dp),
         color = Color.White,
 
