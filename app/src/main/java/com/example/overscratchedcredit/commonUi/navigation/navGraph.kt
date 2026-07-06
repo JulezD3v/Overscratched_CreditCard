@@ -15,8 +15,7 @@ import kotlinx.coroutines.delay
 
 @Composable
 fun AppNavGraph() {
-    // backStack = a list of destination keys, like a stack of cards.
-    // The card on top is what renders on screen.
+
     val backStack = rememberNavBackStack(Splash)
 
     // NavDisplay watches the backStack and renders whatever destination is on top.
@@ -25,7 +24,7 @@ fun AppNavGraph() {
         entryProvider = entryProvider {
 
             // SPLASH
-            // Shows SplashScreen(), waits 2 seconds, then swaps to Home.
+
             entry<Splash> {
                 LaunchedEffect(Unit) {
                     delay(2000)
@@ -63,7 +62,7 @@ fun AppNavGraph() {
                     onBackClick = { backStack.removeLastOrNull() },
                     onManualEntryClick = { backStack.add(ManualEntry) },
                     onShutterClick = { 
-                        // In a real app, the PIN would come from the scanner logic
+                        // the PIN would come from the scanner logic
                         backStack.add(PinResult(pin = "1234567890123456")) 
                     }
                 )

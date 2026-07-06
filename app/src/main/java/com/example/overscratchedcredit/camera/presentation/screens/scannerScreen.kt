@@ -52,8 +52,6 @@ fun ScannerScreen(
     onShutterClick: () -> Unit // ← new: nav graph uses this to push Result
 ) {
     val context = LocalContext.current
-
-    // true when running inside Android Studio Preview — no camera hardware available
     val isPreview = LocalInspectionMode.current
 
     // tracks whether flash is on or off
@@ -127,8 +125,7 @@ fun ScannerScreen(
         }
 
         // ── Camera area ────────────────────────────────────
-        // weight(1f) makes this Box take all remaining vertical space
-        // between the subtitle bar and the controls below
+
         Box(
             modifier = Modifier
                 .fillMaxWidth()
