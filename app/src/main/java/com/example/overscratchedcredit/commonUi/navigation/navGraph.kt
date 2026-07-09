@@ -9,6 +9,8 @@ import androidx.navigation3.ui.NavDisplay
 import com.example.overscratchedcredit.camera.presentation.screens.ScannerScreen
 import com.example.overscratchedcredit.chooseMethods.presentation.screen.ChooseMethodScreen
 import com.example.overscratchedcredit.homePage.presentation.screen.HomeScreen
+import com.example.overscratchedcredit.manual_input.presentation.ManualEntryRoute
+//import com.example.overscratchedcredit.manual_input.presentation.screen.ManualScreen
 import com.example.overscratchedcredit.results.presentation.screens.ResultScreen
 import com.example.overscratchedcredit.splashscreen.presentation.composable.SplashScreen
 import kotlinx.coroutines.delay
@@ -73,15 +75,25 @@ fun AppNavGraph() {
             entry<PinResult> { result ->
                 ResultScreen(
                     pin = result.pin,
-                    onBackClick = { backStack.clear()
-                                    backStack.add(Home) }
+                    amount = result.amount,
+                    serialNumber = result.serial,
+                    partialPin = result.partialPin,
+                    onBackClick = { backStack.clear(); backStack.add(Home) }
                 )
             }
 
             // STUBS — Placeholder UI for screens not yet built
-            entry<ManualEntry> { 
-                Text("Manual entry - TODO") 
+            // MANUAL ENTRY
+            entry<ManualEntry> {
+                ManualEntryRoute(
+                    onNavigateBack = { backStack.removeLastOrNull() },
+                    onNavigateToResult = { pin, amount, serial, partialPin ->
+                        backStack.add(PinResult(pin = pin, amount = amount, serial = serial, partialPin = partialPin))
+                    }
+                )
             }
+
+
             entry<Zuri> { 
                 Text("Zuri - TODO") 
             }

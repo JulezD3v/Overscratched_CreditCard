@@ -37,6 +37,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.overscratchedcredit.manual_input.presentation.ManualEntryVmclass
 import com.example.overscratchedcredit.manual_input.presentation.widget.PinGroupField
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -44,7 +45,9 @@ import com.example.overscratchedcredit.manual_input.presentation.widget.PinGroup
 fun ManualScreen(
     onNavigateBack: () -> Unit,
     onRecoverClick: (serial: String, amount: String, partialPin: String, phone: String) -> Unit
-) {
+)
+
+{
     // ── State ──────────────────────────────────────────────────────────────
     // Each var here is one piece of UI state.
     // When any of these change, Compose redraws only what is affected.

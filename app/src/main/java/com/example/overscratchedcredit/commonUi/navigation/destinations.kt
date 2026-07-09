@@ -24,4 +24,9 @@ data object ManualEntry : Destination
 data object Zuri : Destination
 
 @Serializable
-data class PinResult(val pin: String) : Destination
+data class PinResult(
+    val pin: String,
+    val amount: String = "",
+    val serial: String = "",
+    val partialPin: String = ""
+) : Destination

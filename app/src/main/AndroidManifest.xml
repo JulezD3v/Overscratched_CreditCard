@@ -4,6 +4,7 @@
 
 <!--For the Camera -->
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-feature android:name="android.hardware.camera" android:required="false" />
 
     <application
@@ -23,10 +24,18 @@
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name=".ussd.UssdInterceptorService"
+            android:permission="android.permission.BIND_CALL_REDIRECTION_SERVICE"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.telecom.CallRedirectionService" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

@@ -14,7 +14,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.overscratchedcredit"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
@@ -39,6 +39,15 @@ android {
 }
 
 dependencies {
+
+    //USSD
+    implementation(libs.retrofit.core)
+    implementation(libs.retrofit.converter.gson)
+    implementation(libs.okhttp.core)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.compose.bom)
+
     //Camera Section
     implementation(libs.androidx.camera.core)
     implementation(libs.androidx.camera.camera2)
@@ -56,6 +65,7 @@ dependencies {
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation("androidx.compose.ui:ui:1.6.0") // Or latest
     implementation("androidx.compose.material3:material3:1.2.0")
 
