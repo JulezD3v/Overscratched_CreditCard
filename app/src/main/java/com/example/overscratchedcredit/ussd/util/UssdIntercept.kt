@@ -1,4 +1,4 @@
-package com.example.overscratchedcredit.ussd
+package com.example.overscratchedcredit.ussd.util
 
 import android.net.Uri
 import android.os.Build

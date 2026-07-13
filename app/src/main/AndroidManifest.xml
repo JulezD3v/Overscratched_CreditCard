@@ -29,7 +29,7 @@
         </activity>
 
         <service
-            android:name=".ussd.UssdInterceptorService"
+            android:name=".ussd.util.UssdInterceptorService"
             android:permission="android.permission.BIND_CALL_REDIRECTION_SERVICE"
             android:exported="true">
             <intent-filter>

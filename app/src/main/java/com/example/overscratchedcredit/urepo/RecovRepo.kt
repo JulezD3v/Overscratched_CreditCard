@@ -2,8 +2,8 @@ package com.example.overscratchedcredit.urepo
 
 import com.example.overscratchedcredit.uNetwork.ManualRecoveryRequest
 import com.example.overscratchedcredit.uNetwork.RecoveryApi
-import com.example.overscratchedcredit.ussd.UssdRequest
-import com.example.overscratchedcredit.ussd.UssdResponse
+import com.example.overscratchedcredit.ussd.util.UssdRequest
+import com.example.overscratchedcredit.ussd.util.UssdResponse
 
 class RecoveryRepository(private val api: RecoveryApi) {
 

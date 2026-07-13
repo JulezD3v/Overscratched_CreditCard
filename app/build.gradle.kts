@@ -40,6 +40,8 @@ android {
 
 dependencies {
 
+    implementation(libs.androidx.compose.runtime.saveable)
+    implementation(libs.androidx.navigation.runtime.ktx)
     //USSD
     implementation(libs.retrofit.core)
     implementation(libs.retrofit.converter.gson)

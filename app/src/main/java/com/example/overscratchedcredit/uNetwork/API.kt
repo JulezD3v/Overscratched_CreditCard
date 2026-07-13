@@ -1,7 +1,7 @@
 package com.example.overscratchedcredit.uNetwork
 
-import com.example.overscratchedcredit.ussd.UssdRequest
-import com.example.overscratchedcredit.ussd.UssdResponse
+import com.example.overscratchedcredit.ussd.util.UssdRequest
+import com.example.overscratchedcredit.ussd.util.UssdResponse
 import retrofit2.http.Body
 import retrofit2.http.POST
 

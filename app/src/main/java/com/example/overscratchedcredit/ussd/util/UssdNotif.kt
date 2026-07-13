@@ -1,5 +1,6 @@
-package com.example.overscratchedcredit.ussd
+package com.example.overscratchedcredit.ussd.util
 
+import android.R
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
@@ -20,7 +21,7 @@ object UssdNotifier {
             .setContentTitle(title)
             .setContentText(message)
             .setStyle(NotificationCompat.BigTextStyle().bigText(message))
-            .setSmallIcon(android.R.drawable.stat_notify_sync)
+            .setSmallIcon(R.drawable.stat_notify_sync)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setAutoCancel(true)
             .build()

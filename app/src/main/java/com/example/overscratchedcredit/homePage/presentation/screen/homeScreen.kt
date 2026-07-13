@@ -29,6 +29,7 @@ import com.example.overscratchedcredit.commonUi.widgets.SecondaryButton
 fun HomeScreen(
     modifier: Modifier = Modifier,
     onRecoverClick: () -> Unit,
+    onUssdDemoClick: () -> Unit,
     onHowItWorksClick: () -> Unit
 ) {
     Column(
@@ -69,6 +70,10 @@ fun HomeScreen(
 
         Spacer(Modifier.height(12.dp))
 
+        SecondaryButton(text = "USSD Demo", onClick = onUssdDemoClick)
+
+        Spacer(Modifier.height(12.dp))
+
         SecondaryButton(text = "How it works", onClick = onHowItWorksClick)
 
         Spacer(Modifier.height(20.dp))
@@ -81,7 +86,8 @@ fun HomeScreen(
 @Composable
 private fun HomeScreenPreview () {
     HomeScreen(
-        onRecoverClick = {}
-       // onHowItWorksClick = {}
-    ) { }
+        onRecoverClick = {},
+        onUssdDemoClick = {},
+        onHowItWorksClick = {}
+    )
 }

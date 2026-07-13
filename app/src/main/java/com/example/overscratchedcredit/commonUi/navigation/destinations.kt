@@ -24,6 +24,10 @@ data object ManualEntry : Destination
 data object Zuri : Destination
 
 @Serializable
+data object UssdDemoScreen : Destination
+
+
+@Serializable
 data class PinResult(
     val pin: String,
     val amount: String = "",
