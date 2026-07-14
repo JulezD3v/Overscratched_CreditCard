@@ -37,7 +37,7 @@ fun UssdDemoScreen(
         if (isRandomSerial) return true
         return mockValidVouchers[serial] == amount
     }
-
+//change
     if (showUssdMenu) {
         when (currentPage) {
 
