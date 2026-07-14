@@ -13,7 +13,6 @@ import com.example.overscratchedcredit.manual_input.presentation.ManualEntryRout
 //import com.example.overscratchedcredit.manual_input.presentation.screen.ManualScreen
 import com.example.overscratchedcredit.results.presentation.screens.ResultScreen
 import com.example.overscratchedcredit.splashscreen.presentation.composable.SplashScreen
-import com.example.overscratchedcredit.ussd.screen.UssdDemoScreen as UssdDemoContent
 import kotlinx.coroutines.delay
 import kotlin.time.Duration.Companion.milliseconds
 
@@ -44,7 +43,6 @@ fun AppNavGraph() {
             entry<Home> {
                 HomeScreen(
                     onRecoverClick = { backStack.add(ChooseMethod) },   // → App flow: Scan/Manual/Zuri
-                    onUssdDemoClick = { backStack.add(UssdDemoScreen) },     // → USSD flow: the dialog session
                     onHowItWorksClick = { /* TODO */ }
                 )
             }
@@ -99,13 +97,6 @@ fun AppNavGraph() {
 
             entry<Zuri> { 
                 Text("Zuri - TODO")
-            }
-
-            entry<UssdDemoScreen> {
-                UssdDemoContent(
-                    onCheckStatusClick = { /* TODO: out of MVP scope */ },
-                    onHelpClick = { /* TODO: out of MVP scope */ }
-                )
             }
         }
     )

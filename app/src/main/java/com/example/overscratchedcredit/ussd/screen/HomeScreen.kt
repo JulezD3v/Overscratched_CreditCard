@@ -9,14 +9,22 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.overscratchedcredit.commonUi.theme.OverScratchedCreditTheme
 import com.example.overscratchedcredit.commonUi.widgets.UssdMenuItem
 import com.example.overscratchedcredit.commonUi.widgets.UssdStyleDialog
+import kotlin.random.Random
 
 @Composable
 fun UssdDemoScreen(
+    onDismiss: () -> Unit = {},
     onCheckStatusClick: () -> Unit = {},
     onHelpClick: () -> Unit = {}
 ) {
     var showUssdMenu by rememberSaveable { mutableStateOf(true) }
     var currentPage by rememberSaveable { mutableStateOf("home") }
+    var lastGeneratedSerial by rememberSaveable { mutableStateOf("") }
+
+    // Helper to generate a random 13-digit serial number
+    fun generateRandomSerial(): String {
+        return (1..13).map { Random.nextInt(0, 10).toString() }.joinToString("")
+    }
 
     if (showUssdMenu) {
         when (currentPage) {
@@ -46,7 +54,10 @@ fun UssdDemoScreen(
                             }
                         )
                     ),
-                    onDismiss = { showUssdMenu = false }
+                    onDismiss = { 
+                        showUssdMenu = false
+                        onDismiss()
+                    }
                 )
             }
 
@@ -60,40 +71,47 @@ fun UssdDemoScreen(
                             onClick = { currentPage = "serial" }
                         ),
                         UssdMenuItem(
-                            number = 0,
-                            label = "Back",
-                            onClick = { currentPage = "home" }
-                        )
-                    ),
-                    onDismiss = { showUssdMenu = false }
-                )
-            }
-
-            "status" -> {
-                UssdStyleDialog(
-                    message = "Recovery Status\n\nNo recovery requests found.",
-                    menuItems = listOf(
+                            number = 2,
+                            label = "Send random serial",
+                            onClick = { 
+                                lastGeneratedSerial = generateRandomSerial()
+                                currentPage = "confirm_random" 
+                            }
+                        ),
                         UssdMenuItem(
                             number = 0,
                             label = "Back",
                             onClick = { currentPage = "home" }
                         )
                     ),
-                    onDismiss = { showUssdMenu = false }
+                    onDismiss = { 
+                        showUssdMenu = false
+                        onDismiss()
+                    }
                 )
             }
 
-            "help" -> {
+            "confirm_random" -> {
                 UssdStyleDialog(
-                    message = "Help\n\nUse your voucher serial number to recover a damaged PIN.",
+                    message = "Voucher Found!\nSerial: $lastGeneratedSerial\nAmount: KES 100\n\nRecover PIN?",
                     menuItems = listOf(
-                        UssdMenuItem(
-                            number = 0,
-                            label = "Back",
-                            onClick = { currentPage = "home" }
-                        )
+                        UssdMenuItem(1, "Yes") { currentPage = "result_mock" },
+                        UssdMenuItem(2, "No, cancel") { currentPage = "home" }
                     ),
-                    onDismiss = { showUssdMenu = false }
+                    onDismiss = { 
+                        showUssdMenu = false
+                        onDismiss()
+                    }
+                )
+            }
+
+            "result_mock" -> {
+                UssdStyleDialog(
+                    message = "Your PIN is:\n7482 9103 4721 0034\n\nDial *141*PIN# to top up.\nSMS sent to your number.",
+                    onDismiss = { 
+                        showUssdMenu = false
+                        onDismiss()
+                    }
                 )
             }
 
@@ -107,10 +125,15 @@ fun UssdDemoScreen(
                             onClick = { currentPage = "recover" }
                         )
                     ),
-                    onDismiss = { showUssdMenu = false }
+                    onDismiss = { 
+                        showUssdMenu = false
+                        onDismiss()
+                    }
                 )
             }
         }
+    } else {
+        onDismiss()
     }
 }
 
